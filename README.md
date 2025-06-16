@@ -18,11 +18,11 @@ You will:
 2. Clone your personal repository that was created by GitHub Classroom
 3. Install dependencies:
    ```
-   npm install
+  pnpm install
    ```
 4. Run the server:
    ```
-   npm start
+   pnpm start
    ```
 
 ## Files Included
@@ -61,3 +61,47 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 - [Express.js Documentation](https://expressjs.com/)
 - [RESTful API Design Best Practices](https://restfulapi.net/)
 - [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
+
+# create an env file for the environment variables
+
+#Authentication
+all api must include the API key in the header,if the API key is missing or incorrect the unauthorised error message
+
+# API Documentation
+-GET /api/products
+Description: It retrieve all products (supports pagination and filtering)
+
+Query Parameters:
+
+category: Filter by category (e.g., electronics)
+
+page: Page number (default = 1)
+
+-GET /api/products/stats
+Description: Count of products per category
+
+-GET /api/products/:id
+Description: Get a product by ID
+
+Response (if found): Product object
+
+Response (if not found):404 status
+
+-POST/api/products
+Description: Add a new product
+
+Request Body:product data in json format and a status of 201
+
+-PUT /api/products/:id
+Description: Update an existing product
+
+Request Body: Same structure as POST
+
+Response (if not found):404 status
+
+-DELETE /api/products/:id
+Description: Delete a product by ID
+
+# Error Handling
+Any internal server errors will return:status 500
+
